@@ -1,0 +1,14 @@
+  name: Deploy practice project
+  on: push
+  jobs:
+    lint_test_deploy:
+      runs-on: ubuntu-latest
+      steps:
+        - name: npm package install
+          run: npm install
+        - name: lint
+          uses: actions/checkout@v3
+        - name: test
+          run: npm run test
+        - name: build
+          run: npm run build
